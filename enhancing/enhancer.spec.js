@@ -89,4 +89,17 @@ describe("enhancer.js", () => {
         })
     })
 
+    describe(".get()", function () {
+        it("should update name to include enhancement points", function () {
+            expect(enhancer.get({ name: "Axe", enhancement: 10, durability: 16}))
+                .toStrictEqual({ name: "[+10] Axe", enhancement: 10, durability: 16})
+            expect(enhancer.get({ name: "Sword", enhancement: 18, durability: 65}))
+                .toStrictEqual({ name: "[+18] Sword", enhancement: 18, durability: 65})
+            expect(enhancer.get({ name: "Knife", enhancement: 20, durability: 92}))
+                .toStrictEqual({ name: "[+20] Knife", enhancement: 20, durability: 92})
+            expect(enhancer.get({ name: "Dagger", enhancement: 19, durability: 10}))
+                .toStrictEqual({ name: "[+19] Dagger", enhancement: 19, durability: 10})
+        })
+    })
+
 });

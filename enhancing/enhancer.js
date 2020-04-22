@@ -34,5 +34,9 @@ function repair(item) {
 
 // stretch
 function get(item) {
+  if (item.enhancement > 0) {
+    let points = item.enhancement
+    item.name = `[+${points}] ${item.name}`;
+  }
   return { ...item };
 }
