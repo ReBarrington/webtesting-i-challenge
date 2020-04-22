@@ -16,10 +16,10 @@ function succeed(item) {
 // a fail(item) method that accepts an item object and returns a new item object modified according to the rules defined by the client for enhancement failure.
 function fail(item) {
   if (item.enhancement < 15) {
-    item.enhancement -= 5
+    item.durability -= 5
   } else if (item.enhancement > 15) {
     let addedPenalty = item.enhancement - 15
-    item.enhancement -= (10 + addedPenalty)
+    item.durability -= (10 + addedPenalty)
   }
   return { ...item };
 }
