@@ -17,9 +17,11 @@ function succeed(item) {
 function fail(item) {
   if (item.enhancement < 15) {
     item.durability -= 5
-  } else if (item.enhancement > 15) {
-    let addedPenalty = item.enhancement - 15
-    item.durability -= (10 + addedPenalty)
+  } else if (item.enhancement >= 15 && item.enhancement > 16) {
+    item.durability -= 10
+    item.enhancement -= 1
+  } else if (item.enhancement >= 15) {
+      item.durability -= 10
   }
   return { ...item };
 }
